@@ -1,17 +1,32 @@
+<?php
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+
+sec_session_start();
+
+if (login_check($mysqli) == true) {
+    $logged = 'in';
+} else {
+    $logged = 'out';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Home</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles/style.css">
+<script type="text/JavaScript" src="js/sha512.js"></script> 
+<script type="text/JavaScript" src="js/forms.js"></script> 
 
 <style type="text/css">
     .fieldset-auto-width {
          display: inline-block;
     }
 </style>
-</head> 
+</head>
 
 <body>
 <div class="topnav">
@@ -20,20 +35,26 @@
 
 <div class="content">
 <h1>Welcome to B Suite</h1>
-<form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+
+<?php
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Error Logging In!</p>';
+        }
+?> 
+<form action="includes/process_login.php" method="post" name="login_form"> 	
 	<fieldset class="fieldset-auto-width">
 	<legend>Login</legend>
-	<input type='hidden' name='submitted' id='submitted' value='1'/>
 	<label for='username' >User Name:</label>
-	<input type='text' name='username' id='username'  maxlength="50" />
+	<input type='text' name='username' />
 	<label for='password' >Password:</label>
-	<input type='password' name='password' id='password' maxlength="50" />
-	<input type='submit' name='Submit' value='Submit' />
-	</fieldset>
-	</form>
+	<input type='password' name='password' id='password'/>
+	<input type='button' name='Submit' value='Login' onclick="formhash(this.form, this.form.password);"/>
+	</fieldset>		
+</form>
+</div>
 
 <div class="footer">
-  <p>Copyright © 2018 by Brianware</p>
+  <p>Copyright © 2018 by Brianware Inc</p>
 </div>
 </body>
   </html>
