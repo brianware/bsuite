@@ -1,9 +1,7 @@
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
-
 sec_session_start();
-
 if (login_check($mysqli) == false) {
     header('Location: ./index.php');
 }
@@ -20,19 +18,25 @@ if (login_check($mysqli) == false) {
 
 <body>
 <div class="topnav">
-  <a style="font-weight:bold;color:white;padding-left:10px;">B Suite 2018</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
+ <p style="font-weight:bold;color:white;padding:0px 10px;float: left;">B Suite 2018</p>
+ <a style="margin-left:85px;"href="#">Link</a>
+ <a href="#">Link</a>
+ <a href="#">Link</a>
+  <div class="topnav-right">
+   <a style="font-weight:bold;color:white;padding-left:10px;text-align:right;" href="includes/logout.php">Logout</a>
+  </div>
 </div>
 
 <div class="content">
+ <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
+</div>
 
-<p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
+<div class="sidenav">
+ <a href="#">Link</a>
 </div>
 
 <div class="footer">
   <p>Copyright © 2018 by Brianware Inc</p>
 </div>
 </body>
-  </html>
+</html>
