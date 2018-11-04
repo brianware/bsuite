@@ -30,7 +30,7 @@ if (login_check($mysqli) == true) {
 
 <body>
 <div class="topnav">
-<p style="color:white;padding-left:10px;">B Suite 2018</p>
+<p style="font-weight:bold;color:white;padding-left:10px;">B Suite 2018</p>
 </div>
 
 <div class="content">
