@@ -12,6 +12,9 @@ body {
     overflow: hidden;
     background-color: #333;
     height: 46px;
+    width: 100%;
+    top: 0;
+    position: fixed;
 }
 
 /* Style the topnav links */
@@ -38,9 +41,8 @@ body {
 /* Style the side navigation */
 .sidenav {
     height: 100%;
-    width: 200px;
+    width: 120px;
     position: fixed;
-    z-index: 1;
     top: 46px;
     left: 0;
     background-color: #111;
@@ -63,11 +65,11 @@ body {
 
 /* Style the content */
 .content {
-    margin-left: 200px;
+    margin-left: 120px;
     padding-left: 20px;
-    margin-top: 45px;
+    margin-top: 46px;
     padding-top: 5px;
-    margin-bottom: 45px;
+    margin-bottom: 46px;
     padding-bottom: 10px;
 }
 
@@ -81,4 +83,21 @@ body {
     width: 100%;
     font-size: 12px;
     text-align: right;
+    z-index: -1;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
