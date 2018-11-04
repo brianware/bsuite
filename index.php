@@ -6,6 +6,7 @@ sec_session_start();
 
 if (login_check($mysqli) == true) {
     $logged = 'in';
+    header('Location: ./home.php');
 } else {
     $logged = 'out';
 }
@@ -14,7 +15,7 @@ if (login_check($mysqli) == true) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>Index</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles/style.css">
@@ -30,7 +31,7 @@ if (login_check($mysqli) == true) {
 
 <body>
 <div class="topnav">
-<p style="font-weight:bold;color:white;padding-left:10px;">B Suite 2018</p>
+<a style="font-weight:bold;color:white;padding-left:10px;">B Suite 2018</a>
 </div>
 
 <div class="content">
@@ -54,7 +55,7 @@ if (login_check($mysqli) == true) {
 </div>
 
 <div class="footer">
-  <p>Copyright © 2018 by Brianware Inc</p>
+  <a>Copyright © 2018 by Brianware Inc</a>
 </div>
 </body>
   </html>

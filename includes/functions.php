@@ -45,7 +45,7 @@ function sec_session_start() {
 
 function login($username, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
-    if ($stmt = $mysqli->prepare("SELECT id, email, password, salt 
+    if ($stmt = $mysqli->prepare("SELECT id, username, password, salt 
 				  FROM members 
                                   WHERE username = ? LIMIT 1")) {
         $stmt->bind_param('s', $username);  // Bind "$username" to parameter.
