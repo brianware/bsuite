@@ -14,28 +14,5 @@ else {
     echo "Connection Successful";
 }
 
-
-
-    $qry = "Create Table fgusers3 (".
-        "id_user INT NOT NULL AUTO_INCREMENT ,".
-        "name VARCHAR( 128 ) NOT NULL ,".
-        "email VARCHAR( 64 ) NOT NULL ,".
-        "phone_number VARCHAR( 16 ) NOT NULL ,".
-        "username VARCHAR( 16 ) NOT NULL ,".
-        "salt VARCHAR( 50 ) NOT NULL ,".
-        "password VARCHAR( 80 ) NOT NULL ,".
-        "confirmcode VARCHAR(32) ,".
-        "PRIMARY KEY ( id_user )".
-        ")";
-
-
-    if ($conn->query($qry) === TRUE) {
-        echo "Table  created successfully";
-    } else {
-        echo "Error creating table: " . $conn->error;
-    }
-
-
-
 mysqli_close($conn);
 ?>

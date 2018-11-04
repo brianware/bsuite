@@ -18,6 +18,7 @@
 --
 -- Table structure for table `login_attempts`
 --
+USE bsuite;
 
 DROP TABLE IF EXISTS `login_attempts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
