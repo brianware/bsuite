@@ -18,13 +18,19 @@ if (login_check($mysqli) == false) {
 
 <body>
 <div class="topnav">
- <p style="font-weight:bold;color:white;padding:0px 10px;float: left;">B Suite 2018</p>
- <a style="margin-left:5px;"href="#">Sales</a>
- <a href="#">Inventory</a>
+ <a href="#">Sales</a>
+ <a href="#" class="active">Inventory</a>
  <a href="#">Report</a>
-  <div class="topnav-right">
-   <a style="font-weight:bold;color:white;padding-left:10px;text-align:right;" href="includes/logout.php">Logout</a>
+  <div class="dropdown">
+   <button class="dropbtn">Admin</button>
+   <div class="dropdown-content">
+    <a href="#">Create New User</a>
+    <a href="#">Change Password</a>
+   </div>
   </div>
+   <div class="topnav-right">
+    <a style="font-weight:bold;padding-left:10px;" href="includes/logout.php">Logout</a>
+   </div>
 </div>
 
 <div class="content">
@@ -37,9 +43,7 @@ if (login_check($mysqli) == false) {
   <br>
   <input type="submit" value="Submit">
 </form> 
-
 <br>
-
  <table style="width:100%">
   <tr>
     <th>Item No</th>
@@ -49,15 +53,10 @@ if (login_check($mysqli) == false) {
     <td>95812311231</td>
     <td>3</td>
 </table> 
-
-</div>
-
-<div class="sidenav">
- <a href="#">Invoice</a>
 </div>
 
 <div class="footer">
-  <p>Copyright © 2018 by Brianware Inc</p>
+ <p>Copyright © 2018 by Brianware Inc</p>
 </div>
 </body>
 </html>

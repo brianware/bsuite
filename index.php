@@ -32,7 +32,7 @@ if (login_check($mysqli) == true) {
  <p style="font-weight:bold;color:white;padding:0px 10px;float: left;">B Suite 2018</p>
 </div>
 
- <div style="margin:60px">
+<div style="margin:60px">
  <h1>Welcome to B Suite</h1>
 <?php
         if (isset($_GET['error'])) {
@@ -49,7 +49,7 @@ if (login_check($mysqli) == true) {
    <input type='button' name='Submit' value='Login' onclick="formhash(this.form, this.form.password);"/>
   </fieldset>		
  </form>
- </div>
+</div>
 
 <div class="footer">
  <p>Copyright © 2018 by Brianware Inc</p>
