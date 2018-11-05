@@ -8,7 +8,3 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
-
-function goBack() {
-    window.history.back();
-}

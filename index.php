@@ -71,23 +71,21 @@ img.avatar {
 
 /* Modal Content/Box */
 .modal-content {
-    
     background-color: #fefefe;
     border: 1px solid #888;
-    margin: 50px auto;
-    display: table;
-    width: 400px;
+}
+
+.contain {
+  margin: auto;
+  display: table;
+  width: 350px;
 }
 </style>
-
 </head>
 <body>
 
-<?php
-        if (isset($_GET['error'])) {
-            echo '<p class="error">Error Logging In!</p>';
-        }
-?> 
+<div class="contain">
+<h4>Welcome to B-Suite 2018</h4>
 <form class="modal-content" action="includes/process_login.php" method="post" name="login_form">
  <div class="imgcontainer">
   <img src="avatar.png" class="avatar">
@@ -97,13 +95,20 @@ img.avatar {
   <label for='username'><b>Username</b></label>
    <input type="text" placeholder="Enter Username" name='username' required>
   <label for='password'><b>Password</b></label>
-   <input type='password' placeholder="Enter Password" name='password' id='password' required>
+   <input id="myInput" type='password' placeholder="Enter Password" name='password' id='password' required>
+<?php
+        if (isset($_GET['error'])) {
+            echo "<script type='text/javascript'>alert('Error Logging In! Check your username / password!')</script>";
+        }
+?> 
  </div>
 
  <div class="container" style="background-color:#f1f1f1">
-  <input type='button' class="button" name='Submit' value='Login' onclick="formhash(this.form, this.form.password);"/>
+  <input id="myBtn" type='button' class="button" name='Submit' value='Login' onclick="formhash(this.form, this.form.password);"/>
   <p style="text-align:right;font-size:10px;">Copyright © 2018 by Brianware Inc</p>
  </div>
 </form>
+</div>
+<script type="text/JavaScript" src="js/enterkey.js"></script> 
 </body>
 </html>
