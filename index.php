@@ -60,8 +60,7 @@ input[type=text], input[type=password] {
 }
 
 img.avatar {
-    width: 40%;
-    border-radius: 50%;
+    width: 30%; 
 }
 
 /* Add padding to containers */
@@ -76,9 +75,9 @@ img.avatar {
 }
 
 .contain {
-  margin: auto;
-  display: table;
-  width: 350px;
+    margin: auto;
+    display: table;
+    width: 350px;
 }
 </style>
 </head>
@@ -88,7 +87,7 @@ img.avatar {
 <h4>Welcome to B-Suite 2018</h4>
 <form class="modal-content" action="includes/process_login.php" method="post" name="login_form">
  <div class="imgcontainer">
-  <img src="avatar.png" class="avatar">
+  <img src="img/pos.png" class="avatar">
  </div>
     
  <div class="container">
