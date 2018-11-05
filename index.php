@@ -19,6 +19,7 @@ if (login_check($mysqli) == true) {
 <link rel="stylesheet" href="styles/style.css">
 <script type="text/JavaScript" src="js/sha512.js"></script> 
 <script type="text/JavaScript" src="js/forms.js"></script> 
+<script type="text/JavaScript" src="js/style.js"></script>
 
 <style type="text/css">
     .fieldset-auto-width {
@@ -28,11 +29,11 @@ if (login_check($mysqli) == true) {
 </head>
 
 <body>
-<div class="topnav">
- <p style="font-weight:bold;color:white;padding:0px 10px;float: left;">B Suite 2018</p>
+<div class="topnav" id="topnav">
+ <p style="font-weight:bold;color:white;padding:0px 10px;float:left;">B Suite 2018</p>
 </div>
 
-<div style="margin:60px">
+<div class="content grid-container">
  <h1>Welcome to B Suite</h1>
 <?php
         if (isset($_GET['error'])) {
@@ -46,7 +47,7 @@ if (login_check($mysqli) == true) {
    <input type='text' name='username' />
    <label for='password' >Password:</label>
    <input type='password' name='password' id='password'/>
-   <input type='button' name='Submit' value='Login' onclick="formhash(this.form, this.form.password);"/>
+   <input type='button' class="button" name='Submit' value='Login' onclick="formhash(this.form, this.form.password);"/>
   </fieldset>		
  </form>
 </div>
