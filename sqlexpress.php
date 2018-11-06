@@ -1,6 +1,6 @@
 <?php
-$serverName = "192.168.1.17\sqlexpress,1433"; //serverName\instanceName, portNumber (default is 1433)
-$connectionInfo = array( "Database"=>"CNLPOS", "UID"=>"sa", "PWD"=>"Cnl123");
+$serverName = "192.168.0.194\sqlexpress,1433"; //serverName\instanceName, portNumber (default is 1433)
+$connectionInfo = array( "Database"=>"CNLPOS", "UID"=>"sa", "PWD"=>"A12b34c99d");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 if( $conn ) {
