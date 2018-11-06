@@ -72,11 +72,16 @@ img.avatar {
 .modal-content {
     background-color: #fefefe;
     border: 1px solid #888;
-}
+ }
 
 .contain {
-    margin: auto;
-    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
     width: 350px;
 }
 </style>
@@ -84,8 +89,9 @@ img.avatar {
 <body>
 
 <div class="contain">
-<h4>Welcome to B-Suite 2018</h4>
+
 <form class="modal-content" action="includes/process_login.php" method="post" name="login_form">
+ <h4 style="padding-left:16px;">B-Suite 2018</h4>
  <div class="imgcontainer">
   <img src="img/pos.png" class="avatar">
  </div>

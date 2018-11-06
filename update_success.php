@@ -25,8 +25,8 @@ if (login_check($mysqli) == false) {
   <div class="dropdown active">
    <button class="dropbtn">Admin</button>
    <div class="dropdown-content">
-    <a href="adduser.php" class="active">Create New User</a>
-    <a href="updateuser.php">Change Password</a>
+    <a href="adduser.php">Create New User</a>
+    <a href="updateuser.php" class="active">Change Password</a>
    </div>
   </div>
    <div class="topnav-right">
@@ -35,10 +35,8 @@ if (login_check($mysqli) == false) {
 </div>
 
 <div class="content grid-container">
- <h1>Registration Successful</h1>
+ <h1>Update Password Successful</h1>
  
- 
-<a href="adduser.php" class="button">Click here to add more user</a>
 </div>
 
 <div class="footer">

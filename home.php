@@ -26,7 +26,7 @@ if (login_check($mysqli) == false) {
    <button class="dropbtn">Admin</button>
    <div class="dropdown-content">
     <a href="adduser.php">Create New User</a>
-    <a href="#">Change Password</a>
+    <a href="updateuser.php">Change Password</a>
    </div>
   </div>
   <div class="topnav-right">
