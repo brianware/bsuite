@@ -54,6 +54,7 @@ if (login_check($mysqli) == false) {
   <li>Your password and confirmation must match exactly</li>
  </ul>
   <form method="post" name="updateuser_form" action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>">
+  <input type='hidden' name='username' id='username' value='<?php echo htmlentities($_SESSION['username']);;?>'/> 
                      Password: <input type="password"
                              name="password" 
                              id="password"/><br>

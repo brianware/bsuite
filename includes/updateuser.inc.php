@@ -4,7 +4,9 @@ include_once 'psl-config.php';
 
 $error_msg = "";
 
-if (isset($_POST['p'])) {
+if (isset($_POST['username'], $_POST['p'])) {
+    // Sanitize and validate the data passed in
+       $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     // Sanitize and validate the data passed in
        $password = filter_input(INPUT_POST, 'p', FILTER_SANITIZE_STRING);
     if (strlen($password) != 128) {
@@ -20,13 +22,11 @@ if (isset($_POST['p'])) {
         // Create salted password 
         $password = hash('sha512', $password . $random_salt);
         
-        $username = htmlentities($_SESSION['username']);
-        
         // Insert the new user into the database 
-        if ($insert_stmt = $mysqli->prepare("UPDATE members SET password = ?, salt = ? WHERE username = ?")) {
-            $insert_stmt->bind_param('sss', $password, $random_salt , $username);
+        if ($update_stmt = $mysqli->prepare("UPDATE members SET password = ?, salt = ? WHERE username = ?")) {
+            $update_stmt->bind_param('sss', $password, $random_salt , $username);
             // Execute the prepared query.
-            if (! $insert_stmt->execute()) {
+            if (! $update_stmt->execute()) {
                 header('Location: ../error.php?err=Change Password failure: UPDATE');
                 exit();
             }

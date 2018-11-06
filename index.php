@@ -114,6 +114,6 @@ img.avatar {
  </div>
 </form>
 </div>
-<script type="text/JavaScript" src="js/enterkey.js"></script> 
+<script type="text/JavaScript" src="js/entkey.js"></script> 
 </body>
 </html>
